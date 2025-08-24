@@ -55,10 +55,55 @@ nav .nav-links a:hover {
 .hero {
     background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
     color: white;
-    padding: 120px 20px 80px;
+    padding: 140px 20px 80px;
     text-align: center;
     position: relative;
     overflow: hidden;
+    margin-top: 20px;
+}
+
+/* Header Section (for Privacy/Terms pages) */
+header {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    color: white;
+    padding: 140px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(6,182,212,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    line-height: 1.2;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .hero::before {
@@ -511,29 +556,397 @@ footer {
     text-decoration: underline;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
+    /* Navigation */
+    nav {
+        padding: 10px 15px;
+    }
+    
+    nav .nav-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav .logo {
+        font-size: 1.3rem;
+    }
+    
+    nav .nav-links {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav .nav-links a {
+        margin-left: 0;
+        font-size: 0.9rem;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: 120px 15px 60px;
+        margin-top: 15px;
+    }
+    
+    /* Header Section */
+    header {
+        padding: 120px 15px 60px;
+        margin-top: 15px;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        margin-bottom: 20px;
     }
     
     .hero .subhead {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+    
+    .vibe-badge {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+        margin-bottom: 20px;
+    }
+    
+    /* Content Sections */
+    .content-section {
+        padding: 40px 15px;
+    }
+    
+    .container {
+        padding: 0 15px;
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
     }
     
     .content-text {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    /* Stats Grid */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .stat-item {
+        padding: 20px 15px;
+    }
+    
+    .stat-item h4 {
+        font-size: 1.2rem;
+    }
+    
+    /* Portfolio Grid */
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .portfolio-item {
+        padding: 20px 15px;
+    }
+    
+    .portfolio-item h4 {
+        font-size: 1.3rem;
+    }
+    
+    .tech-stack h5 {
+        font-size: 1rem;
+    }
+    
+    .tech-tags {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .tech-tag {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+    
+    /* Contact Form */
+    .cta {
+        padding: 40px 15px;
     }
     
     .contact-form {
-        padding: 30px 20px;
+        padding: 25px 15px;
     }
     
-    .portfolio-grid {
-        grid-template-columns: 1fr;
+    .form-group {
+        margin-bottom: 20px;
     }
+    
+    .form-group label {
+        font-size: 0.9rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 15px;
+        font-size: 1rem;
+    }
+    
+    .submit-btn {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 25px 15px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .footer-links a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    /* Navigation */
+    nav {
+        padding: 8px 10px;
+    }
+    
+    nav .logo {
+        font-size: 1.2rem;
+    }
+    
+    nav .nav-links {
+        gap: 15px;
+    }
+    
+    nav .nav-links a {
+        font-size: 0.85rem;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: 100px 10px 50px;
+        margin-top: 10px;
+    }
+    
+    /* Header Section */
+    header {
+        padding: 100px 10px 50px;
+        margin-top: 10px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    header p {
+        font-size: 0.9rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero .subhead {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    
+    .vibe-badge {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    
+    /* Content Sections */
+    .content-section {
+        padding: 30px 10px;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .content-text {
+        font-size: 0.95rem;
+    }
+    
+    /* Stats Grid */
+    .stat-item {
+        padding: 15px 10px;
+    }
+    
+    .stat-item h4 {
+        font-size: 1.1rem;
+    }
+    
+    .stat-item p {
+        font-size: 0.9rem;
+    }
+    
+    /* Portfolio Grid */
+    .portfolio-item {
+        padding: 15px 10px;
+    }
+    
+    .portfolio-item h4 {
+        font-size: 1.1rem;
+    }
+    
+    .portfolio-item p {
+        font-size: 0.9rem;
+    }
+    
+    .tech-tag {
+        font-size: 0.75rem;
+        padding: 3px 6px;
+    }
+    
+    /* Contact Form */
+    .cta {
+        padding: 30px 10px;
+    }
+    
+    .contact-form {
+        padding: 20px 10px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+    
+    .submit-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 20px 10px;
+    }
+    
+    .footer-links a {
+        font-size: 0.85rem;
+        margin: 0 8px;
+    }
+}
+
+/* Landscape Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        padding: 100px 20px 40px;
+        margin-top: 15px;
+    }
+    
+    header {
+        padding: 100px 20px 40px;
+        margin-top: 15px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .content-section {
+        padding: 30px 20px;
+    }
+}
+
+/* Privacy and Terms Page Specific Styles */
+.container h2 {
+    color: #06b6d4;
+    font-size: 1.8rem;
+    margin: 30px 0 15px 0;
+    border-bottom: 2px solid rgba(6, 182, 212, 0.3);
+    padding-bottom: 10px;
+}
+
+.container h3 {
+    color: #d1d5db;
+    font-size: 1.3rem;
+    margin: 20px 0 10px 0;
+}
+
+.container p {
+    margin-bottom: 15px;
+    color: #d1d5db;
+}
+
+.container ul {
+    margin: 15px 0;
+    padding-left: 30px;
+}
+
+.container li {
+    margin-bottom: 8px;
+    color: #d1d5db;
+}
+
+.highlight-box {
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.contact-info {
+    background: rgba(6, 182, 212, 0.05);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    border-radius: 8px;
+    padding: 25px;
+    margin: 30px 0;
+}
+
+.contact-info h3 {
+    color: #06b6d4;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #06b6d4;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
 }
